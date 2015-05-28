@@ -27,6 +27,10 @@ All Python packages that are needed in order to run the model are listed in the 
 	
 	pip install -r requirements.txt
 	
+..then install the pathos framework and its modified externals from: https://github.com/uqfoundation
+A MPI distribution is needed for mpi4py which itself is a dependency of the pathos dependency pyina.
+
+The pathos framework is used for multiprocessing in steadyStateAnalysis.py only. Uncomment Line 73 to 88 and comment line 90 to 124 out to use a single core approach which does not require pathos.	
 It was noticed that under some systems LSODA integrator from the scipy.odeint package is not available. This integrator is necessary for a correct computation. Please check if it is available on your system before running the model.
 
 ## Example
